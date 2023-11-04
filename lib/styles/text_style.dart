@@ -54,8 +54,32 @@ TextStyle normalText = TextStyle(
   fontSize: 14,
 );
 
-TextStyle headText = TextStyle(
+TextStyle homeText = TextStyle(
+  fontFamily: _secondaryFont,
+  color: normalTextColor,
+  fontSize: 14,
+);
+
+TextStyle smallText = TextStyle(
   fontFamily: _primaryFont,
+  color: normalTextColor,
+  fontSize: 12,
+);
+
+TextStyle categoryText = TextStyle(
+  fontFamily: _primaryFont,
+  color: normalTextColor,
+  fontSize: 10,
+);
+
+TextStyle smallBlueText = TextStyle(
+  fontFamily: _primaryFont,
+  color: whiteColor,
+  fontSize: 12,
+);
+
+TextStyle headText = TextStyle(
+  fontFamily: _secondaryFont,
   color: headTextColor,
-  fontSize: 24,
+  fontSize: 22,
 );

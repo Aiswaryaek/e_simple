@@ -1,6 +1,6 @@
 class BaseUrls
 {
-  static const devApiBaseUrl = 'https://orangestager.com/Abumarwan-web/public';
+  static const devApiBaseUrl = '';
 
   static const stagingApiBaseUrl = '';
 

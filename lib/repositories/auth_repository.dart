@@ -9,5 +9,8 @@ class AuthRepository {
   AuthRepository() {
     webService = Webservice();
   }
-  Future login(String email, String password) => webService?.post(postLoginApi(email,password));
+  Future login(String username, String password,) => webService?.post(postLoginApi(username, password));
+  Future signUpData(
+      String email, String password, String firstName, String lastName) =>
+      webService?.post(postSignUpApi(email, password, firstName, lastName));
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:e_simple/features/home_page.dart';
+import 'package:e_simple/features/sign_up_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../core/ui_state.dart';
@@ -8,7 +9,7 @@ import '../providers/login_provider.dart';
 import '../repositories/auth_repository.dart';
 import '../styles/colors.dart';
 import '../styles/text_style.dart';
-import '../widgets/green_button.dart';
+import '../widgets/blue_button.dart';
 import '../widgets/text_input_field.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
     final isValidEmail = validateEmail(emailController.text);
     final isValidPassword = validatePassword(passwordController.text);
     if (isValidEmail && isValidPassword) {
-      await loginProvider.userLogin(
+      await loginProvider.login(
           emailController.text, passwordController.text);
     }
   }
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: whiteColor,
         body: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(25, 60, 25, 20),
           child: loginWidget(context),
@@ -101,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
           return SizedBox(
             height: MediaQuery.of(context).size.height / 1.3,
             child: const Center(
-              child: CircularProgressIndicator(color: richTextColor),
+              child: CircularProgressIndicator(color: cardColor),
             ),
           );
         } else if (state is Initial) {
@@ -110,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Center(
                 child: Image.network(
-                  'https://img.freepik.com/premium-vector/pg-logo-design_695270-259.jpg',
+                  'https://us.123rf.com/450wm/cidepix/cidepix1809/cidepix180900665/108935761-vector-illustration-of-grey-glossy-snake-shaped-letter-s-isolated-on-a-white-background.jpg?ver=6',
                   height: 130,
                 ),
               ),
@@ -164,10 +165,10 @@ class _LoginPageState extends State<LoginPage> {
                             style: richText,
                             recognizer: TapGestureRecognizer()
                               ..onTap = () => {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) => SignUpPage(token)))
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => SignUpPage()))
                                   })
                       ])),
                 ],

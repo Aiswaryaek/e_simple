@@ -23,3 +23,5 @@ const normalTextColor = Color.fromRGBO(24, 23, 37, 1);
 const headTextColor = Color.fromRGBO(33, 33, 33, 1);
 
 const listBackgroundColor = Color.fromRGBO(246, 246, 246, 1);
+
+const cardColor = Color.fromRGBO(198, 215, 230, 1);

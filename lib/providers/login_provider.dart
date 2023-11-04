@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../core/live_data.dart';
 import '../core/ui_state.dart';
 import '../models/login_model.dart';
@@ -14,22 +13,7 @@ class LoginProvider extends ChangeNotifier {
   LiveData<UIState<LoginModel>> loginLiveData = LiveData<UIState<LoginModel>>();
 
   LiveData<UIState<LoginModel>> getLoginLiveData() {
-    return this.loginLiveData;
-  }
-
-  bool _disposed = false;
-
-  @override
-  void dispose() {
-    _disposed = true;
-    super.dispose();
-  }
-
-  @override
-  void notifyListeners() {
-    if (!_disposed) {
-      super.notifyListeners();
-    }
+    return loginLiveData;
   }
 
   void initialState() {
@@ -37,11 +21,11 @@ class LoginProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  userLogin(String email, String password) async {
+  Future<void> login(String username, String password) async {
     try {
       loginLiveData.setValue(IsLoading());
-      loginModel = await authRepository.login(email, password);
-      if (loginModel.success!.token != null) {
+      loginModel = await authRepository.login(username, password);
+      if (loginModel.id != '') {
         loginLiveData.setValue(Success(loginModel));
       } else {
         loginLiveData.setValue(Failure(loginModel.toString()));

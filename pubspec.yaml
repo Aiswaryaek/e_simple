@@ -72,6 +72,12 @@ flutter:
   assets:
 
     - assets/images/logo.jpg
+    - assets/images/icon-fresh.png
+    - assets/images/icon-healthy.png
+    - assets/images/icon-natural.png
+    - assets/images/icon-quality.png
+    - assets/images/organic.png
+    - assets/images/offer_image.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
